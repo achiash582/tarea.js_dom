@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tienda de Cursos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f6fa;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    h1, h2 {
+      color: #1a1a2e;
+      text-align: center;
+    }
+
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .tienda {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .curso {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .curso p.precio {
+      color: #2563eb;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .curso button {
+      background-color: #1e8449;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .carrito {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th {
+      background-color: #1a1a2e;
+      color: white;
+      padding: 10px;
+      text-align: left;
+    }
+
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .total {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    #totalPagar {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .eliminar {
+      background-color: #c0392b;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <div>
+      <h1>Tienda de Cursos</h1>
+      <div class="tienda">
+
+        <div class="curso">
+          <h2>Curso de React</h2>
+          <p class="precio">$50</p>
+          <button onclick="agregarAlCarrito('Curso de React', 50)">Agregar al Carrito</button>
+        </div>
+
+        <div class="curso">
+          <h2>Curso de n8n</h2>
+          <p class="precio">$40</p>
+          <button onclick="agregarAlCarrito('Curso de n8n', 40)">Agregar al Carrito</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="carrito">
+      <h1>Tu Carrito</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpoCarrito">
+        </tbody>
+      </table>
+
+      <div class="total">
+        <h2>Total a Pagar:</h2>
+        <span id="totalPagar">$0</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
